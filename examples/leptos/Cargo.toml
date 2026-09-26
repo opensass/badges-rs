@@ -1,0 +1,18 @@
+[workspace]
+
+[package]
+name = "badges-rs-leptos-example"
+version = "0.1.0"
+authors = ["Mahmoud Harmouch <oss@wiseai.dev>"]
+edition = "2024"
+
+[dependencies]
+badges-rs = { path = "../../", features = ["lep"] }
+leptos = { version = "0.8.20", features = ["csr"] }
+console_error_panic_hook = "0.1.7"
+
+[profile.release]
+codegen-units = 3
+opt-level = "z"
+lto = "thin"
+strip = "symbols"
